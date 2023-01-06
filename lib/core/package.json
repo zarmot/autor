@@ -1,0 +1,24 @@
+{
+  "name": "@autor/core",
+  "version": "0.1.0",
+  "description": "scripting framework",
+  "license": "MIT",
+  "author": "Zarmot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zarmot/autor"
+  },
+  "type": "module",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "watch": "tsc -b -w"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.4"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "Node",
+
+    "strict": true,
+
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    
+    "composite": true,
+    "noEmitOnError": true,
+
+    "rootDir": "src",
+    "outDir": "lib"
+  }
+}

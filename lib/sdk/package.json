@@ -1,0 +1,22 @@
+{
+  "name": "@autor/sdk",
+  "version": "0.1.0",
+  "description": "autor's browser side sdk",
+  "license": "MIT",
+  "author": "Zarmot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zarmot/autor"
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "watch": "tsc -b -w"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
