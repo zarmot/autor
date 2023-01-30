@@ -1,0 +1,12 @@
+#agui-title {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bolder;
+    margin-bottom: 3px;
+}
+.agui-page {
+    margin: 30px 50px;
+}
+.agui-card {
+    margin: 20px 0px;
+}

@@ -1,6 +1,5 @@
 {
     "files.exclude": {
-        "**/node_modules": true,
-        "**/tsconfig.tsbuildinfo": true
+        "**/node_modules": true
     }
 }

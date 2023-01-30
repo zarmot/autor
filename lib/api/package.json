@@ -1,13 +1,14 @@
 {
-  "name": "@autor/sdk",
+  "name": "@autor/api",
   "version": "0.100.0",
-  "description": "autor's browser side sdk",
+  "description": "autor's api",
   "license": "MIT",
   "author": "Zarmot",
   "repository": {
     "type": "git",
     "url": "https://github.com/zarmot/autor"
   },
+  "type": "module",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "files": [
@@ -15,9 +16,6 @@
   ],
   "scripts": {
     "dev": "tsc -b -w"
-  },
-  "dependencies": {
-    "@autor/api": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^4.9.4"

@@ -1,0 +1,19 @@
+#agui-pages-run-card {
+    display: flex;
+    height: calc(100vh - 170px);
+}
+#agui-pages-run-card-left {
+    width: 370px;
+    margin-right: 24px;
+}
+#agui-pages-run-card-right {
+    width: calc(100% - 370px);
+    height: 100%;
+    overflow: auto;
+    scrollbar-width: none;
+}
+#agui-pages-run-card-left-tree {
+    margin: 15px 0px;
+    height: calc(100% - 15px - 32px);
+    overflow: auto;
+}

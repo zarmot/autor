@@ -1,10 +1,10 @@
 {
   "private": true,
-  "name": "autor-works",
+  "name": "autor-workspace",
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "watch": "tsc -b -w"
+    "dev": "tsc -b -w"
   },
   "devDependencies": {
     "@autor/core": "workspace:*",
