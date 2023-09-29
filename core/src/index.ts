@@ -1,4 +1,4 @@
-import { readFile, readdir } from "fs/promises"
+import { readFile } from "fs/promises"
 import { sep, extname } from "path"
 
 let jspath = process.cwd()
