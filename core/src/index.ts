@@ -10,7 +10,7 @@ try {
   }
 } catch { }
 
-const inits: Array<() => void> = []
+const inits: Array<() => Promise<void>> = []
 async function load(path: string) {
   let mod: any
   try { mod = await import(path) } catch { }
@@ -25,4 +25,6 @@ for (let i = 0; i < dirs.length; i++) {
   await load(`file://${jspath}/${dirs.slice(0, i + 1).join("/")}/autor.cfg.js`)
 }
 await load(`file://${jspath}/${spath.replace(extname(spath), ".cfg.js")}`)
-inits.forEach((init) => init())
+for (let i = 0; i < inits.length; i++) {
+  await inits[i]()
+}
