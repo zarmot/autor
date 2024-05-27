@@ -1,0 +1,24 @@
+{
+  "name": "autor",
+  "version": "3.3001.0",
+  "description": "A comfortable way to write and run TS/JS scripts.",
+  "license": "MIT",
+  "author": "Zarmot",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zarmot/autor.git"
+  },
+  "type": "module",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "dev": "tsc -w"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "typescript": "^5.4.5"
+  }
+}
