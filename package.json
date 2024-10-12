@@ -1,7 +1,7 @@
 {
   "name": "autor",
-  "version": "3.3001.0",
-  "description": "A comfortable way to write and run TS/JS scripts.",
+  "version": "5.5000.0",
+  "description": "My comfortable way to write and run TS scripts.",
   "license": "MIT",
   "author": "Zarmot",
   "repository": {
@@ -18,7 +18,7 @@
     "dev": "tsc -w"
   },
   "devDependencies": {
-    "@types/node": "^20.12.12",
-    "typescript": "^5.4.5"
+    "@types/node": "^22.7.5",
+    "typescript": "^5.6.3"
   }
 }
