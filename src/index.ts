@@ -43,11 +43,11 @@ await load_dir(`${jspath}/env`)
 
 //cfg
 const cfg_inits: Array<() => Promise<void>> = []
-await load(`${jspath}/autor.cfg.js`, cfg_inits)
+await load(`${jspath}/.autor.js`, cfg_inits)
 const spath = process.argv[2]
 const dirs = spath.split(sep).slice(0, -1)
 for (let i = 0; i < dirs.length; i++) {
-    await load(`${jspath}/${dirs.slice(0, i + 1).join("/")}/autor.cfg.js`, cfg_inits)
+    await load(`${jspath}/${dirs.slice(0, i + 1).join("/")}/.autor.js`, cfg_inits)
 }
 await load(`${jspath}/${spath.replace(extname(spath), ".cfg.js")}`, cfg_inits)
 
