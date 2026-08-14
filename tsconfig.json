@@ -7,8 +7,10 @@
     "moduleResolution": "NodeNext",
 
     "strict": true,
-
+    
     "declaration": true,
+
+    "types": ["node"],
 
     "rootDir": "src",
     "outDir": "lib"

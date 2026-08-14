@@ -1,5 +1,6 @@
 import fs from "fs/promises"
-import { sep, extname } from "path"
+import { extname } from "path"
+import { pathToFileURL } from "url"
 
 declare global {
     interface Config { }
@@ -7,11 +8,11 @@ declare global {
 }
 global.CFG = {} as any
 
-let jspath = `${process.cwd()}/.built`
+const root = process.cwd()
 
 async function load(path: string, inits: Array<() => Promise<void>>) {
     let mod: any
-    try { mod = await import(`file://${path}`) } catch { }
+    try { mod = await import(pathToFileURL(path).href) } catch { }
     if (mod?.init) {
         inits.push(mod.init)
     }
@@ -27,8 +28,8 @@ async function load_dir(path: string) {
     const dirs: string[] = []
     for (let i = 0; i < ls.length; i++) {
         const e = ls[i];
-        if (e.isFile() && e.name == "0.js") {
-            await load(`${path}/0.js`, env_inits)
+        if (e.isFile() && e.name == "0.ts") {
+            await load(`${path}/0.ts`, env_inits)
             return
         } else if (e.isDirectory()) {
             dirs.push(e.name)
@@ -39,17 +40,17 @@ async function load_dir(path: string) {
         await load_dir(`${path}/${dir}`)
     }
 }
-await load_dir(`${jspath}/env`)
+await load_dir(`${root}/env`)
 
 //cfg
 const cfg_inits: Array<() => Promise<void>> = []
-await load(`${jspath}/.autor.js`, cfg_inits)
-const spath = process.argv[2]
-const dirs = spath.split(sep).slice(0, -1)
+await load(`${root}/.autor.ts`, cfg_inits)
+const spath = (process.argv[2] ?? "").replaceAll("\\", "/")
+const dirs = spath.split("/").slice(0, -1)
 for (let i = 0; i < dirs.length; i++) {
-    await load(`${jspath}/${dirs.slice(0, i + 1).join("/")}/.autor.js`, cfg_inits)
+    await load(`${root}/${dirs.slice(0, i + 1).join("/")}/.autor.ts`, cfg_inits)
 }
-await load(`${jspath}/${spath.replace(extname(spath), ".cfg.js")}`, cfg_inits)
+await load(`${root}/${spath.replace(extname(spath), ".cfg.ts")}`, cfg_inits)
 
 //env-inits
 for (let i = 0; i < env_inits.length; i++) {
